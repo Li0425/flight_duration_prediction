@@ -1,7 +1,7 @@
-flight_airborne_time_prediction
+Arrival flight duration prediction at ATL airport
 ==============================
 
-Predict flight airborne time in the US
+Predict AIBT-AOBT for arrival flights at ATL airport in the US
 
 Project Organization
 ------------
