@@ -1,4 +1,4 @@
-Arrival flight duration prediction at ATL airport
+Arrival flight duration (from AOBT to AIBT) prediction at ATL airport
 ==============================
 
 Predict AIBT-AOBT for arrival flights at ATL airport in the US
