@@ -111,7 +111,6 @@ for file_name in file_list:
     for feature in feature_list:
         arrivals[feature] = 0
     
-    
     # generate the dep STOT df and stot series
     dep_flight_STOT = departures[['FlightDate','DEP_Flight_STOT']]
     stot = dep_flight_STOT['DEP_Flight_STOT']
