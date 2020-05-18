@@ -130,5 +130,9 @@ data/interim/*
 data/processed/*
 data/external/*
 
+# exclude notebooks used as references
+notebooks/TM
+notebooks/AIAcademy
+
 # gitkeep files
 !.gitkeep
