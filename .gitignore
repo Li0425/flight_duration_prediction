@@ -136,3 +136,6 @@ notebooks/AIAcademy
 
 # gitkeep files
 !.gitkeep
+
+# Visual Studio Code related
+.vscode
