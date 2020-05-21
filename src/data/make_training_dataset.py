@@ -5,6 +5,7 @@ as a CSV file. The CSV file is then manually zipped. The original CSV file is
 in my local pc.
 Possible improvements:
     output a zip file straight away
+    mimic make_test_dataset.py in handling column deletion
 """
 import os
 import pandas as pd
