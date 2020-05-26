@@ -133,6 +133,7 @@ data/external/*
 # exclude notebooks used as references
 notebooks/TM
 notebooks/AIAcademy
+notebooks/Machine-Learning-Pipeline
 
 # gitkeep files
 !.gitkeep
