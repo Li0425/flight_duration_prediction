@@ -4,7 +4,8 @@ setup(
     name='src',
     packages=find_packages(),
     version='0.1.0',
-    description='Predict flight airborne time in the US',
-    author='Li Shuang',
+    description='Predict arrival flight duration (AOBTtoAIBT) at\
+         Hartsfield-Jackson Atlanta International Airport',
+    author='Shuang Li',
     license='',
 )
