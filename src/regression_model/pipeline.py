@@ -3,7 +3,12 @@ from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import StandardScaler
 
 from regression_model.processing import preprocessors as pp
-import regression_model.config import config
+from regression_model.config import config
+
+import logging
+
+
+_logger = logging.getLogger(__name__)
 
 
 flight_duration_pipe = Pipeline(
