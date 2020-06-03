@@ -1,7 +1,5 @@
 import pathlib
-
 import regression_model
-
 import pandas as pd
 
 
