@@ -4,18 +4,22 @@ orbs:
   python: circleci/python@0.2.1
 
 jobs:
-  build-and-test:
-    executor: python/default
+  test_regression_model:
+    working_directory: ~/project
+    docker:
+      - image: circleci/python:3.7.2
     steps:
       - checkout
-      - python/load-cache
-      - python/install-deps
-      - python/save-cache
       - run:
-          command: ./manage.py test
-          name: Test
+          name: Runnning tests
+          command: |
+            . venv/bin/activate
+            pip install --upgrade pip
+            pip install -r packages/regression_model/requirements.txt
+            py.test -vv packages/regression_model/tests
 
 workflows:
-  main:
+  version: 2.1
+  test-all:
     jobs:
-      - build-and-test
+      - test_regression_model
