@@ -12,8 +12,6 @@ class InvalidInputError(Exception):
 class FlightDataRequestSchema(Schema):
     Distance = fields.Integer()
     DistanceGroup = fields.Integer()
-    # issues with the naming convention of
-    # airport traffic congestion level features
     Num_Arr_SIBTp10 = fields.Integer()
     Num_Arr_SIBTp15 = fields.Integer()
     Num_Arr_SIBTp20 = fields.Integer()
@@ -73,8 +71,17 @@ def validate_inputs(input_data):
     # set many=True to allow passing in a list
     schema = FlightDataRequestSchema(strict=True, many=True)
 
-    validated_input = input_data
-
     errors = None
+    try:
+        schema.load(input_data)
+    except ValidationError as exc:
+        errors = exc.messages
+
+    if errors:
+        validated_input = _filter_error_rows(
+            errors=errors,
+            validated_input=input_data)
+    else:
+        validated_input = input_data
 
     return validated_input, errors
