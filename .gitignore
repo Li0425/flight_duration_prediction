@@ -127,7 +127,6 @@ dmypy.json
 # exclude data from source control by default
 data/raw/*
 data/interim/*
-data/processed/*
 data/external/*
 
 # exclude notebooks used as references
@@ -140,3 +139,6 @@ notebooks/Machine-Learning-Pipeline
 
 # Visual Studio Code related
 .vscode
+
+# pickle files
+*.pkl
