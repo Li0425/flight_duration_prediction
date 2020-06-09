@@ -7,30 +7,29 @@ from regression_model.processing.data_management import load_dataset
 def test_make_single_prediction():
     # Given
     test_data = load_dataset(file_name='test_data.csv')
-    single_test_json = test_data[0:1]
+    single_test_input = test_data[0:1]
 
     # When
-    subject = make_prediction(input_data=single_test_json)
+    subject = make_prediction(input_data=single_test_input)
 
     # Then
     assert subject is not None
     assert isinstance(subject.get('predictions')[0], float)
     assert math.ceil(subject.get('predictions')[0]) == 113
-    
+
 
 def test_make_multiple_predictions():
     # Given
     test_data = load_dataset(file_name='test_data.csv')
     original_data_length = len(test_data)
-    multiple_test_json = test_data
+    multiple_test_input = test_data
 
     # When
-    subject = make_prediction(input_data=multiple_test_json)
+    subject = make_prediction(input_data=multiple_test_input)
 
     # Then
     assert subject is not None
     assert len(subject.get('predictions')) == 10000
 
     # We expect some rows to be filtered out
-    # assert len(subject.get('predictions')) != original_data_length
-    # if validation module filtered out some rows
+    assert len(subject.get('predictions')) != original_data_length
