@@ -77,7 +77,7 @@ jobs:
             chmod +x ./scripts/publish_model.sh
             ./scripts/publish_model.sh ./src/
 
-  section_9_differential_tests:
+  differential_tests:
     <<: *defaults
     steps:
       - checkout
