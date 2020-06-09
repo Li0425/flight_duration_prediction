@@ -16,8 +16,47 @@ jobs:
             pip install -r src/requirements.txt
             py.test -vv src/tests
 
+  test_ml_api:
+    working_directory: ~/project
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
+      - run:
+          name: Runnning tests
+          command: |
+            virtualenv venv
+            . venv/bin/activate
+            pip install --upgrade pip
+            pip install -r ml_api/requirements.txt
+            py.test -vv ml_api/tests
+
+  train_and_upload_regression_model:
+    working_directory: ~/project
+    docker:
+      - image: circleci/python:3.7.2
+    steps:
+      - checkout
+      - run: 
+          name: Setup env
+          command: |
+            virtualenv venv
+            . venv/bin/activate
+            pip install -r src/requirements.txt
+      - run: 
+          name: Publish model
+          command: |
+            . venv/bin/activate
+            PYTHONPATH=./src python3 src/regression_model/train_pipeline.py
+            ./scripts/publish_model.sh ./src
+
 workflows:
   version: 2
   test-all:
     jobs:
       - test_regression_model
+      - test_ml_api
+      - train_and_upload_regression_model
+      - test_ml_api:
+          requires:
+            - train_and_upload_regression_model
