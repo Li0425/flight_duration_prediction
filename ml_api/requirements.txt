@@ -10,5 +10,5 @@ marshmallow==2.17.0
 # please update with your local path
 # -e "C:\Users\lis\repos\flight_duration_prediction\src"
 
-# install from gemfury
-regression-model==0.1.0
+# Install from gemfury
+regression-model==1.0.0
