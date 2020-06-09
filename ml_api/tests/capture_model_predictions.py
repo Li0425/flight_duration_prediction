@@ -16,7 +16,7 @@ def capture_predictions() -> None:
     """Save the test data predictions to a CSV."""
 
     save_file = 'test_data_predictions.csv'
-    test_data = load_dataset(file_name='test.csv')
+    test_data = load_dataset(file_name='test_data.csv')
 
     # we take a slice with no input validation issues
     multiple_test_input = test_data[99:600]
