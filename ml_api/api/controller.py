@@ -12,6 +12,8 @@ _logger = get_logger(logger_name=__name__)
 prediction_app = Blueprint('prediction_app', __name__)
 
 
+# route() is a decorator that tells Flask what URL should trigger
+# the function defined as health()
 @prediction_app.route('/health', methods=['GET'])
 def health():
     if request.method == 'GET':

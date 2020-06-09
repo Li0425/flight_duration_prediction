@@ -1,3 +1,5 @@
+# define the fixture functions in this file to make them
+# accessible across multiple test files
 import pytest
 
 from api.app import create_app
