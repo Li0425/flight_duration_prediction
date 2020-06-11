@@ -1,9 +1,9 @@
-FROM python:3.6-slim
+FROM python:3.6.4
 
 # Create the user that will run the app
 RUN adduser --disabled-password --gecos '' ml-api-user
 
-WORKDIR /opt/ml_api
+WORKDIR /opt/ml_api/
 
 ARG PIP_EXTRA_INDEX_URL
 ENV FLASK_APP run.py
@@ -20,4 +20,4 @@ USER ml-api-user
 
 EXPOSE 5000
 
-CMD ["bash", "./run.sh"] 
+CMD ["bash", "./run.sh"]
