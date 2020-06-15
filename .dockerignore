@@ -1,7 +1,6 @@
 */env*
 */venv*
 .circleci*
-./regression_model
 *.env
 *.log
 .git
@@ -11,11 +10,6 @@
 data/raw/*
 data/interim/*
 data/external/*
-
-# exclude notebooks used as references
-notebooks/TM
-notebooks/AIAcademy
-notebooks/Machine-Learning-Pipeline
 
 # gitkeep files
 !.gitkeep
