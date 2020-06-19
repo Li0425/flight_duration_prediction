@@ -1,0 +1,23 @@
+*/env*
+*/venv*
+.circleci*
+*.env
+*.log
+.git
+.gitignore
+
+# exclude data from source control by default
+data/raw/*
+data/interim/*
+data/external/*
+
+# gitkeep files
+!.gitkeep
+
+# Visual Studio Code related
+.vscode
+
+notebooks
+references
+reports
+src
